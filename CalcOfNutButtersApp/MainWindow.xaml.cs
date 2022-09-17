@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows;
-using NuttyMorning;
+using CalcOfNutButtersApp.NuttyMorning;
 
 namespace CalcOfNutButtersApp
 {
@@ -20,14 +20,12 @@ namespace CalcOfNutButtersApp
         {
             CalcNutButter nb = new CalcNutButter(ingred, recepts, Int32.Parse(massOfPast_tB.Text));
             double[] calc = nb.CalculationIngredients();
-            string[] output = nb.IngredientsOutput(calc);
+            string[] output = nb.IngredientsPrint(calc);
 
             ListValues_tB.Clear();
 
             for (int i = 0; i < output.Length; i++)
-            {
                 ListValues_tB.Text += output[i] + "\n";
-            }
         }
 
         private void PeanutSalt_rB_Checked(object sender, RoutedEventArgs e)
